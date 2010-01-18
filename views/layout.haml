@@ -1,0 +1,16 @@
+%html
+  %head
+    %title Andrew's Streaming Media Test
+    %link{:href => '/stylesheet.css', :rel => 'Stylesheet', :type => 'text/css'}
+  %body
+    #container
+      %p 
+        This is a testpage to test the differences between 3 different streaming media technologies.
+        The first technology is Apple's new HTTP Live Streaming, the second is the traditional RTP/RTSP (over HTTP) 
+        and the last one is probably the most famous: Flash Media streaming as done on YouTube.com.
+        Please use a html5 capable browser (Safari, Chrome, Firefox 3.5) as this site uses the new &lt;video&gt; tag often.
+      = yield
+      #footer
+        This app is available as open source
+        %a{:href => "http://github.com/andruby/StreamingMedia-Test"} on github
+      
