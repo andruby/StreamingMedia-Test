@@ -13,3 +13,21 @@ end
 get '/' do
   haml :index
 end
+
+get '/http_live_apple' do
+  haml :apple
+end
+
+get '/http_live_oss' do
+  haml :oss
+end
+
+get '/flash' do
+  haml :flash
+end
+
+helpers do
+  def link_to(txt,url)
+    "[ <a href='#{url}'>#{txt}</a> ]"
+  end
+end
