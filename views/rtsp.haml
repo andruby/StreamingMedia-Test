@@ -1,3 +1,7 @@
 #video
-  %video{:src => "rtsp://94.228.215.124:80/jonathan_ive_design.mp4", :controls => "on"}
-    Video tag not supported, please use a browser that supports the video tag (Safari 3.1, Chrome 3.0, Firefox 3.5)
+  %object{:width => 480, :height => 285}
+    %embed{:src => "rtsp://94.228.215.124:80/jonathan_ive_design.mp4"}
+
+%p
+  To view this stream your browser needs a plugin that can show rtsp/rtp streams with H.264 video and AAC audio codecs. 
+  Any version of QuickTime higher than 4.0 can do this.
