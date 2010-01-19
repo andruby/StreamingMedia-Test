@@ -16,6 +16,7 @@ end
 
 get '/view/:type' do
   raise Sinatra::NotFound unless %w{apple oss flash rtsp}.include? params[:type].to_s
+  @rtsp_link = "rtsp://94.228.215.124:80/jonathan_ive_design.mp4"
   haml params[:type].to_sym
 end
 

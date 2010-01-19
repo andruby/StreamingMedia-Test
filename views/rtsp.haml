@@ -1,7 +1,19 @@
 #video
-  %object{:width => 480, :height => 285}
-    %embed{:src => "rtsp://94.228.215.124:80/jonathan_ive_design.mp4"}
+  %object{:width => 480, :height => 285, :codebase => "http://www.apple.com/qtactivex/qtplugin.cab", :classid => "clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" }
+    %param{:name => "src", :value => @rtsp_link}
+    %param{:name => "qtsrc", :value => @rtsp_link}
+    %param{:name => "href", :value => @rtsp_link}
+    %param{:name => "autoplay", :value => "true"}
+    %param{:name => "controller", :value => "true"}
+    %param{:name => "type", :value => "video/quicktime"}
+    %param{:name => "target", :value => "myself"}
+    %param{:name => "loop", :value => "true"}
+    %embed{:src => @rtsp_link, :qtsrc => @rtsp_link, :href => @rtsp_link, :width => 480, :height => 285, :autoplay => "true", :controller => "true", :loop => "true"}
 
 %p
   To view this stream your browser needs a plugin that can show rtsp/rtp streams with H.264 video and AAC audio codecs. 
-  Any version of QuickTime higher than 4.0 can do this.
+  Any version of QuickTime higher than 4.0 should work.
+
+%p 
+  If the embedded video doesn't work, try clicking on this link:
+  %a{:href => @rtsp_link}= @rtsp_link
