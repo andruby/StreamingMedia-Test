@@ -14,16 +14,9 @@ get '/' do
   haml :index
 end
 
-get '/http_live_apple' do
-  haml :apple
-end
-
-get '/http_live_oss' do
-  haml :oss
-end
-
-get '/flash' do
-  haml :flash
+get '/view/:type' do
+  raise Sinatra::NotFound unless %w{apple oss flash rtsp}.include? params[:type].to_s
+  haml params[:type].to_sym
 end
 
 helpers do
